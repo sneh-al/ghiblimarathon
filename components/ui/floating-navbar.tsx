@@ -14,8 +14,8 @@ export const FloatingNav = ({
   className,
 }: {
   navItems: {
-    name: string;
-    link: string;
+    name?: string;
+    link?: string;
     icon?: JSX.Element;
   }[];
   className?: string;
@@ -72,10 +72,6 @@ export const FloatingNav = ({
             <span className="hidden text-sm sm:block">{navItem.name}</span>
           </Link>
         ))}
-        <button className="relative rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-foreground dark:border-background/[0.2] dark:text-background">
-          <span>Login</span>
-          <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-        </button>
       </motion.div>
     </AnimatePresence>
   );

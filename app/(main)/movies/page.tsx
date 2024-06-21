@@ -1,17 +1,13 @@
 import Films from "@/components/FIlms";
+import prisma from "@/lib/db";
 import { fetcher } from "@/lib/utils";
 
-const getMovies = async () => {
-  const movies = await fetch("https://ghibli.rest/films");
-  return movies.json();
-};
-
 export default async function Movies() {
-  const films = await getMovies();
+  const movies = await prisma.movies.findMany();
   return (
     <section>
       <article className="container py-24">
-        <Films items={films} />
+        <Films items={movies} />
       </article>
     </section>
   );

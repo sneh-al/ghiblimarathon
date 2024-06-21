@@ -1,12 +1,25 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+/**
+ * Combines multiple class values into a single string using Tailwind CSS's `clsx` function and `twMerge` function.
+ *
+ * @param {...ClassValue[]} inputs - The class values to be combined.
+ * @return {string} - The combined class string.
+ */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const fetcher = async (url: string) => {
-  const options = {
+/**
+ * Fetches data from the specified URL using the GET method.
+ *
+ * @param {string} url - The URL to fetch data from.
+ * @return {Promise<any>} A promise that resolves to the fetched data.
+ * @throws {Error} If there is an error during the fetch request.
+ */
+export const fetcher = async (url: string): Promise<any> => {
+  const options: RequestInit = {
     method: "GET",
     headers: {
       accept: "application/json",
@@ -22,6 +35,12 @@ export const fetcher = async (url: string) => {
   }
 };
 
+/**
+ * Converts the given minutes to hours and minutes format.
+ *
+ * @param {string} minutes - The minutes to convert to hours and minutes.
+ * @return {string} The time in hours and minutes format.
+ */
 export const convertMinutesToTime = (minutes: string) => {
   const minutesInNumber = parseInt(minutes, 10);
   const hours = Math.floor(minutesInNumber / 60);
@@ -67,3 +86,17 @@ export let statusList = [
   { id: 3, title: "OnHold" },
   { id: 4, title: "Dropped" },
 ];
+
+/**
+ * Converts a date string to a formatted date string in the format 'YYYY-MM-DD'.
+ *
+ * @param {string} dateString - The date string to convert.
+ * @return {string} The formatted date string in the format 'YYYY-MM-DD'.
+ */
+export const convertDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};

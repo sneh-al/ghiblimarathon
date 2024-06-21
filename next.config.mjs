@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.themoviedb.org",
       },
+      {
+        protocol: "https",
+        hostname: "ui-avatars.com",
+      },
     ],
   },
 };

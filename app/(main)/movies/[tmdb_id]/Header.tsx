@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Actions from "./Actions";
-import { getCategoryById } from "@/lib/utils";
 
-const Header = ({
-  movie,
-}: {
+type HeaderProps = {
   movie: {
     title: string;
     id: number;
@@ -15,31 +12,37 @@ const Header = ({
     backdrop_path: string;
     poster_path: string;
   };
-}) => {
+};
+const Header = ({ movie }: HeaderProps) => {
   return (
     <article className="relative">
       <Image
-        src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+        src={`${process.env.TMDB_IMAGE_LINK}${movie?.backdrop_path}`}
         fill
         alt="movie"
         priority={false}
         className="-z-0 w-full bg-red-400 bg-opacity-50 object-cover object-top opacity-20"
       />
       <div className="container p-5">
-        <div className="item relative flex h-full w-full flex-col-reverse justify-center gap-5 md:flex-row">
-          <div className="md:max-w-xs">
+        <div className="item relative flex h-full w-full flex-col-reverse gap-5 md:flex-row">
+          <div className="md:max-w-md">
             <Image
-              src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
+              src={`${process.env.TMDB_IMAGE_LINK}${movie?.poster_path}`}
               height={600}
               width={450}
               alt="movie"
               priority={false}
               className="h-full w-full"
             />
+            <div className="md:hidden">
+              <Actions movie={movie} />
+            </div>
           </div>
           <div className="flex max-w-prose flex-col items-start justify-center gap-2">
             <p className="text-2xl font-semibold">{movie?.title}</p>
-            <Actions movie={movie} />
+            <div className="hidden md:block">
+              <Actions movie={movie} />
+            </div>
           </div>
         </div>
       </div>

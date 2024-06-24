@@ -3,21 +3,17 @@ import Actions from "./Actions";
 
 type HeaderProps = {
   movie: {
+    id: string;
     title: string;
-    id: number;
-    genre_ids?: number[];
-    release_date?: string;
-    original_title: string;
-    overview: string;
-    backdrop_path: string;
-    poster_path: string;
+    movie_banner: string;
+    image: string;
   };
 };
 const Header = ({ movie }: HeaderProps) => {
   return (
     <article className="relative">
       <Image
-        src={`${process.env.TMDB_IMAGE_LINK}${movie?.backdrop_path}`}
+        src={movie?.movie_banner}
         fill
         alt="movie"
         priority={false}
@@ -27,7 +23,7 @@ const Header = ({ movie }: HeaderProps) => {
         <div className="item relative flex h-full w-full flex-col-reverse gap-5 md:flex-row">
           <div className="md:max-w-md">
             <Image
-              src={`${process.env.TMDB_IMAGE_LINK}${movie?.poster_path}`}
+              src={movie?.image}
               height={600}
               width={450}
               alt="movie"

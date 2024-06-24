@@ -72,7 +72,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply scroll-smooth bg-background text-foreground;
   }
   .round {
     @apply rounded-t-[2rem] md:rounded-t-[3rem];

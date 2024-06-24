@@ -100,3 +100,7 @@ export const convertDate = (dateString: string) => {
   const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 };
+
+export const calculatePercentage = (completed: number, total: number) => {
+  return ((completed / total) * 100).toFixed(2);
+};

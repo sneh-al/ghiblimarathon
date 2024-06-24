@@ -17,12 +17,12 @@ const CastnCrew = async ({ movieId }: { movieId: number }) => {
 
         <ScrollArea className="max-w-7xl whitespace-nowrap rounded p-5">
           <div className="flex gap-5">
-            {credits.cast.map(
+            {credits?.cast?.map(
               (staff: { name: string; profile_path: string }) => (
                 <AvatarComponent
                   key={staff.name}
                   staff={staff}
-                  thing={staff.character}
+                  thing={staff?.character}
                 />
               ),
             )}
@@ -35,7 +35,7 @@ const CastnCrew = async ({ movieId }: { movieId: number }) => {
         <span className="heading">Crew</span>
         <ScrollArea className="max-w-7xl whitespace-nowrap">
           <div className="flex gap-5">
-            {credits.crew.map(
+            {credits?.crew?.map(
               (staff: { name: string; profile_path: string }) => (
                 <AvatarComponent
                   key={staff.name}

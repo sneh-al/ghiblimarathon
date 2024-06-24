@@ -18,7 +18,6 @@ export async function GET(request: Request) {
     return NextResponse.redirect(new URL(`/`, request.url));
   }
   const user = await getUser();
-  console.log(user);
   if (!user) {
     return NextResponse.redirect(new URL(`/`, request.url));
   }
@@ -35,7 +34,8 @@ export async function GET(request: Request) {
         data: {
           kindeId: user.id,
           email: user.email || " ",
-          name: user.given_name || "'",
+          name: user.given_name + " " + user.family_name || "'",
+          imageUrl: user.picture,
         },
       });
     }

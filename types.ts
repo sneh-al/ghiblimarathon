@@ -77,3 +77,7 @@ export type LinksTypes = {
   instagram_id: string | null;
   twitter_id: string | null;
 };
+
+export type statusComponetsProps = {
+  data: { status: string; movieId?: string }[];
+};

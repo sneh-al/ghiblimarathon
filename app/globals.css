@@ -25,6 +25,15 @@
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
 
+    --success: 120, 70%, 40%;
+    --success-foreground: 0 0% 10%;
+    --watching: 210 90% 50%;
+    --watching-foreground: 0 0% 10%;
+    --onhold: 45 90% 50%;
+    --onhold-foreground: 0 0% 10%;
+    --dropped: 0 70% 50%;
+    --dropped-foreground: 0 0% 10%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
@@ -56,6 +65,15 @@
 
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
+
+    --success: 120, 70%, 60%;
+    --success-foreground: 0 0% 90%;
+    --watching: 210 90% 60%;
+    --watching-foreground: 0 0% 90%;
+    --dropped: 0 70% 60%;
+    --dropped-foreground: 0 0% 90%;
+    --onhold: 45 90% 60%;
+    --onhold-foreground: 0 0% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

@@ -1,8 +1,9 @@
 import { CardHeader, Card, CardTitle, CardFooter } from "@/components/ui/card";
 import prisma from "@/lib/db";
 import Actions from "../movies/[movie_id]/Actions";
+import { statusComponetsProps } from "@/types";
 
-const Remaining = async ({ data }) => {
+const Remaining = async ({ data }: statusComponetsProps) => {
   const movies = await prisma.movies.findMany();
   const remainMovies = movies.filter(
     (movie) => !data.some((d) => d.movieId === movie.id),

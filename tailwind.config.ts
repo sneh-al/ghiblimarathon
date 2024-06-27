@@ -47,6 +47,26 @@ const config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+
+        watching: {
+          default: "hsl(var(--watching))",
+          foreground: "hsl(var(--watching-foreground))",
+        },
+
+        onhold: {
+          default: "hsl(var(--onhold))",
+          foreground: "hsl(var(--onhold-foreground))",
+        },
+
+        dropped: {
+          default: "hsl(var(--dropped))",
+          foreground: "hsl(var(--dropped-foreground))",
+        },
+
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

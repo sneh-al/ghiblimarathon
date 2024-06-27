@@ -25,7 +25,7 @@ const Header = async () => {
   const user = await getUser();
   return (
     <header className="bottom-0 z-50 w-full">
-      <nav className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-5 p-5 md:flex-row md:justify-between">
+      <nav className="container mx-auto flex flex-col items-center justify-center gap-5 p-5 shadow-sm md:flex-row md:justify-between">
         <div className="text-2xl md:text-4xl">
           <a
             href="/"

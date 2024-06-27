@@ -22,8 +22,8 @@ export default async function Movie({
   return (
     <section className="">
       <Header movie={movie} />
-      <Info movieId={movie.tmdb_id} />
-      <CastnCrew movieId={movie.tmdb_id} />
+      <Info movieId={movie?.tmdb_id} />
+      <CastnCrew movieId={movie?.tmdb_id} />
     </section>
   );
 }
